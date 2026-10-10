@@ -1,0 +1,53 @@
+{
+  "vocabulary_version": "mechanical-vocabulary-v1",
+  "labeling_policy_version": "mechanical-labeling-v1",
+  "snapshot_schema_version": "annotation-training-v1",
+  "requirement_types": [
+    "DIMENSION", "GEOMETRIC_TOLERANCE", "SURFACE_FINISH", "THREAD", "MATERIAL",
+    "HEAT_TREATMENT", "COATING", "GEAR_SPLINE", "MANUFACTURING_NOTE", "OTHER"
+  ],
+  "member_roles": [
+    "PRIMARY", "NOMINAL", "UPPER_TOLERANCE", "LOWER_TOLERANCE", "UNIT", "DATUM", "SYMBOL", "CONTEXT"
+  ],
+  "text_characters": [
+    {"character": "Ø", "label": "Diameter"},
+    {"character": "±", "label": "Plus-minus"},
+    {"character": "°", "label": "Degree"},
+    {"character": "×", "label": "Multiplication / by"},
+    {"character": "µ", "label": "Micro"},
+    {"character": "≤", "label": "Less than or equal"},
+    {"character": "≥", "label": "Greater than or equal"},
+    {"character": "′", "label": "Minute (prime)"},
+    {"character": "″", "label": "Second (double prime)"}
+  ],
+  "symbol_codes": [
+    {"code": "GDT_STRAIGHTNESS", "label": "Straightness", "unicode": "⏤"},
+    {"code": "GDT_FLATNESS", "label": "Flatness", "unicode": "⏥"},
+    {"code": "GDT_CIRCULARITY", "label": "Circularity", "unicode": "○"},
+    {"code": "GDT_CYLINDRICITY", "label": "Cylindricity", "unicode": "⌭"},
+    {"code": "GDT_PROFILE_LINE", "label": "Profile of a line", "unicode": "⌒"},
+    {"code": "GDT_PROFILE_SURFACE", "label": "Profile of a surface", "unicode": "⌓"},
+    {"code": "GDT_PERPENDICULARITY", "label": "Perpendicularity", "unicode": "⟂"},
+    {"code": "GDT_ANGULARITY", "label": "Angularity", "unicode": "∠"},
+    {"code": "GDT_PARALLELISM", "label": "Parallelism", "unicode": "⫽"},
+    {"code": "GDT_POSITION", "label": "Position", "unicode": "⌖"},
+    {"code": "GDT_CONCENTRICITY", "label": "Concentricity", "unicode": "◎"},
+    {"code": "GDT_SYMMETRY", "label": "Symmetry", "unicode": "⌯"},
+    {"code": "GDT_CIRCULAR_RUNOUT", "label": "Circular runout", "unicode": "↗"},
+    {"code": "GDT_TOTAL_RUNOUT", "label": "Total runout", "unicode": "⌰"},
+    {"code": "MODIFIER_MMC", "label": "Maximum material condition", "unicode": "Ⓜ"},
+    {"code": "MODIFIER_LMC", "label": "Least material condition", "unicode": "Ⓛ"},
+    {"code": "MODIFIER_FREE_STATE", "label": "Free state", "unicode": "Ⓕ"},
+    {"code": "MODIFIER_PROJECTED_TOLERANCE_ZONE", "label": "Projected tolerance zone", "unicode": "Ⓟ"},
+    {"code": "COUNTERBORE", "label": "Counterbore", "unicode": "⌴"},
+    {"code": "COUNTERSINK", "label": "Countersink", "unicode": "⌵"},
+    {"code": "DEPTH", "label": "Depth", "unicode": "↧"},
+    {"code": "DATUM_FEATURE", "label": "Datum feature triangle", "unicode": null},
+    {"code": "DATUM_TARGET", "label": "Datum target", "unicode": null},
+    {"code": "SURFACE_TEXTURE_BASIC", "label": "Surface texture (basic)", "unicode": null},
+    {"code": "SURFACE_TEXTURE_MATERIAL_REMOVAL_REQUIRED", "label": "Surface texture (material removal required)", "unicode": null},
+    {"code": "SURFACE_TEXTURE_MATERIAL_REMOVAL_PROHIBITED", "label": "Surface texture (material removal prohibited)", "unicode": null},
+    {"code": "WELD", "label": "Weld symbol", "unicode": null},
+    {"code": "FEATURE_CONTROL_FRAME", "label": "Feature control frame (whole frame)", "unicode": null}
+  ]
+}

@@ -1,0 +1,11 @@
+fastapi==0.116.1
+uvicorn[standard]==0.35.0
+python-multipart==0.0.20
+pydantic==2.13.5
+SQLAlchemy==2.0.43
+psycopg[binary]==3.2.10
+alembic==1.16.5
+pypdf==6.0.0
+pypdfium2==4.30.0
+pytesseract==0.3.13
+Pillow==11.3.0

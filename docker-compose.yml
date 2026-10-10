@@ -1,0 +1,35 @@
+# One image runs migrations, the preparation worker and the API (which serves the frontend).
+# The same image is what Render runs (see render.yaml and deploy/RENDER.md).
+#   docker compose up --build        -> http://127.0.0.1:8080
+name: annotation-workspace
+
+services:
+  db:
+    image: postgres:18
+    environment:
+      POSTGRES_USER: annotation
+      POSTGRES_PASSWORD: annotation
+      POSTGRES_DB: annotation
+    volumes: [pgdata:/var/lib/postgresql]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U annotation"]
+      interval: 2s
+      retries: 30
+
+  app:
+    build: .
+    ports: ["127.0.0.1:8080:8000"]
+    environment:
+      DATABASE_URL: postgresql://annotation:annotation@db:5432/annotation
+      APP_PUBLIC_ORIGIN: http://127.0.0.1:8080,http://localhost:8080
+      TRUSTED_HOSTS: 127.0.0.1,localhost
+      ENABLE_OCR_SUGGESTIONS: "true"
+    depends_on: {db: {condition: service_healthy}}
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/annotation/health/ready')"]
+      interval: 5s
+      start_period: 30s
+    stop_grace_period: 30s
+
+volumes:
+  pgdata:
